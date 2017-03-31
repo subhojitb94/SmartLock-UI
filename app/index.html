@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS (load bootstrap) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <base href="/">
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/alertify.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="assets/alertify.min.css">
+    <script src="app.js"></script>
+    <script src="controllers/loginCtrl.js"></script>
+    <script src="controllers/homeCtrl.js"></script>
+    <script src="controllers/userCtrl.js"></script>
+   
+    
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp" ng-controller="mainCtrl">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><i class="fa fa-lock"></i> SmartLocking System</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!--<ul class="nav navbar-nav">
+        
+      </ul>-->
+      <ul class="nav navbar-nav navbar-right" ng-if="isLoggedIn">
+            <li class="active" ng-if="isLoggedIn" ui-sref="dashboard"><a href="#">Welcome {{userName}} !</a></li> 
+        <li ui-sref="dashboard"><a href="#">Home</a></li>        
+        <li><a href="#" ui-sref="register">Add User</a></li>
+        <li><a href="#" ui-sref="change-password">Change Password</a></li>
+        <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+        <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+</body>
+ <script>
+ $(function () {
+            $('.navbar-collapse ul li a:not(.dropdown-toggle)').bind('click touchstart', function () {
+                    $('.navbar-toggle:visible').click();
+            });
+    });
+</script> 
+</html>

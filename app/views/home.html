@@ -1,0 +1,17 @@
+<div ng-controller="homeCtrl">
+<!--<p class="text-center">{{text}}</p>-->
+<div class="col-md-6 col-md-offset-3" style="margin-top: 20px;">
+    <table class="table table-responsive table-bordered">
+      <tr>
+        <th>TagUID</th>
+        <th>AccessTime</th>        
+        <th>Actions</th>
+        </tr>
+        <tr ng-repeat="accessLog in accessLogs">
+          <td>{{accessLog.TagUID}}</td>
+          <td>{{accessLog.AccessTime}}</td>          
+          <td><div class="btn btn-danger" ng-click="deleteAccessLog(accessLog._id)">Delete</div></td>
+        </tr>
+      </table>
+    </div>
+</div>
