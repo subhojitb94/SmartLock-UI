@@ -27,7 +27,7 @@ var loginDTO={"Username":usr.Username,"Password":usr.Password};
   }
    
   }, function errorCallback(response) {
-  
+     alertify.error('Unable to contact server, Login Failed');
   });
 }
 
