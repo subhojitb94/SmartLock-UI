@@ -37,7 +37,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) 
 routerApp.controller('mainCtrl',function($rootScope,$scope,$state){
 $rootScope.isLoggedIn=false;
 alertify.set('notifier','position', 'middle-right');
-
+$rootScope.userName=sessionStorage.getItem('loggedinName');
 $rootScope.$on('$stateChangeStart', 
 function(event, toState, toParams, fromState, fromParams, options){ 
   

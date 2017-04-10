@@ -13,8 +13,10 @@ var loginDTO={"Username":usr.Username,"Password":usr.Password};
   if(response.data.status===0){
    alertify.success('Welcome to SmartLock !')
    $rootScope.isLoggedIn=true;
-   $rootScope.userName=response.data.name;
+   
    sessionStorage.setItem('authToken', response.data.authToken);
+    sessionStorage.setItem('loggedinUsername', response.data.userName);
+    sessionStorage.setItem('loggedinName', response.data.name);
    $state.go('dashboard');
   }
   else{
