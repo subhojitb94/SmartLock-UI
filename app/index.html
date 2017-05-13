@@ -24,6 +24,7 @@
     <script src="controllers/homeCtrl.js"></script>
     <script src="controllers/userCtrl.js"></script>
     <script src="controllers/changepassCtrl.js"></script>
+    <script src="controllers/webAccessCtrl.js"></script>
    
     
 </head>
@@ -48,7 +49,8 @@
       </ul>-->
       <ul class="nav navbar-nav navbar-right" ng-if="isLoggedIn">
             <li class="active" ng-if="isLoggedIn" ui-sref="dashboard"><a href="#">Welcome {{userName}} !</a></li> 
-        <li ui-sref="dashboard"><a href="#">Home</a></li>        
+        <li ui-sref="dashboard"><a href="#">Home</a></li>    
+        <li><a href="#" ui-sref="web-access">Web Unlock</a></li>    
         <li><a href="#" ui-sref="register">Add User</a></li>
         <li><a href="#" ui-sref="change-password">Change Password</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->

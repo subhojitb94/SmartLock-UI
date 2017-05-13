@@ -30,6 +30,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider) 
             templateUrl: 'views/changepassword.html'
         })
 
+        .state('web-access', {
+            url: '/web-access',
+            templateUrl: 'views/webaccess.html'
+        })
+
         $locationProvider.html5Mode(true); //activate HTML5 Mode
         
 });
