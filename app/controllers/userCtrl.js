@@ -5,7 +5,7 @@ $scope.text='Welcome to new user registration page';
 $scope.registerUser=function(registerDTO){
 $http({
   method: 'POST',
-  url: 'http://localhost:8000/createUser',  
+  url: 'http://192.168.43.30:8000/createUser',  
   data: registerDTO
 }).then(function successCallback(response) {
   debugger

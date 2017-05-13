@@ -6,7 +6,7 @@ $scope.auth=function(usr){
 var loginDTO={"Username":usr.Username,"Password":usr.Password};
  $http({
   method: 'POST',
-  url: 'http://localhost:8000/authenticateUser',  
+  url: 'http://192.168.43.30:8000/authenticateUser',  
   data: loginDTO
 }).then(function successCallback(response) {
   debugger

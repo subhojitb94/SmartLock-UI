@@ -13,7 +13,7 @@ var passwordDTO={
 }
 $http({  
   method: 'POST',
-  url: 'http://localhost:8000/changePassword',  
+  url: 'http://192.168.43.30:8000/changePassword',  
   data: passwordDTO
 }).then(function successCallback(response) {
   debugger
